@@ -26,4 +26,32 @@ class Solution(object):
             j-=1
         return b
 
+#using recurion
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        i = 0
+        j = len(s)-1
+        def palin(s,k, m):
+            if k >= m:
+                return True
+            if not s[k].isalnum():
+                k+=1
+            elif not s[m].isalnum():
+                m-=1
+            elif s[k].lower() != s[m].lower():
+                return False
+            else:
+                k+=1
+                m-=1
+            
+            return palin(s,k,m)
+
+        return palin(s,i,j)
+            
+
+
 
