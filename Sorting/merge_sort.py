@@ -1,5 +1,5 @@
 # Merge sort (Divide and merge)
-# O(nlog(n))
+#  Time complexity =O(nlog(n)), sc = O(N)
 
 def mergeSort(arr, l, h):
     # l is low, h is high
