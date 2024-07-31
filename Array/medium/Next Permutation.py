@@ -7,9 +7,10 @@ class Solution(object):
         #find the smallest large number greater than break point index value and swap.
         # we know the values after breakpoint are in the increasing order from end, so reverse it
         # once completed we get the next permutation
+        #[2 1 5 4 3 0 0]
 
 
-#finding the break point index
+#finding the break point index, step 1: [2 1 5 4 3 0 0], index = 1
         i =len(nums)-2
         index = -1
         while i >= 0:
@@ -19,6 +20,7 @@ class Solution(object):
             i-=1
 # swaping the index value with smallest large element greter than break point value
 # to do that we are searching from the end, since we know all the elements from the end to index are in sorted increasing order
+#step 2: [2 3 5 4 1 0 0]
         i = len(nums)-1
         while i > index and index != -1:
             if nums[i] > nums[index]:
@@ -29,6 +31,7 @@ class Solution(object):
             i-=1
     #after swaping we can reverse the elements before index, to get the next permutation,
     #edge case: if index is not found, still -1, that means that is the last permutation, so simply reversing gives the first permutation
+    # step3: [2 3 0 0 1 4 5]
         i= index+1
         j = len(nums)-1
         while i < j:
