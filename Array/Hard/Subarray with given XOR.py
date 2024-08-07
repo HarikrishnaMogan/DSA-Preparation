@@ -4,6 +4,7 @@ https://www.interviewbit.com/problems/subarray-with-given-xor/
 # xor ^ b = x
 # x = xor ^ b
 
+# used same logic like prefix sum
 map = dict()
         map[0] = 1 
         xor = 0
