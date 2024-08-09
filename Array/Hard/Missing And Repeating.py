@@ -5,10 +5,10 @@ class Solution:
         # code here
         #sum of N natural numbers, sn = n*(n+1)/2
         #sum of square of N natural num, s2n = n*(n+1)*(2n+1)/6
-        #x-y =s1-sn (val1)
+        #x-y =s1-sn as (val1)
         #x^2-y^2 = s2-s2n (a^2-b^2 = (a+b)(a-b))
         #(x+y)(x-y) = s2-s2n
-        #x+y = s2-s2n/(x-y) (val2)
+        #x+y = s2-s2n/(x-y) as (val2)
         #now we have two equations to solve as aper alzebgra
         #upon solving we get, 2x = val1+val2 => x =(val2+val2)/2
         
