@@ -15,7 +15,7 @@ def findKthPositive(self, arr: List[int], k: int) -> int:
         high=len(arr)-1
         while low<=high:
             mid=(low+high)//2
-            missingNumbers = arr[mid]-(mid+1) #please refer striver video if have doubt
+            missingNumbers = arr[mid]-(mid+1)#missing = arr[index]-(index+1) #please refer striver video if have doubt
             if missingNumbers <k:
                 low=mid+1
             else:
