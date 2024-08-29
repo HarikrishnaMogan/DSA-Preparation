@@ -11,8 +11,8 @@ class Solution:
         if n1 > n2: # use only small arry for n1,then only for single element this logic works assume n1 = [1], n2=[]
             return self.kthElement(k,arr2, arr1)
         
-        low = max(0,k-n2)  # we won't have sufficentelements to form symmetry if we don't do this,assume k (10)is the last element and we don't have 10 elements to form symmentry  when mid1 is 0, o avoid that we make low as max of 0,k-n2
-        high = min(k,n1) # if simply k is 2nd element,and n2 is 4, we don't want to go till 4, we only need 2 elements max
+        low = max(0,k-n2)  #we should pick minimum of 1 element in arr1 if k>n2  # we won't have sufficentelements to form symmetry if we don't do this,assume k (10)is the last element and we don't have 10 elements to form symmentry  when mid1 is 0, o avoid that we make low as max of 0,k-n2
+        high = min(k,n1)   # if k < n1 , it is practically not possible to pick maximim of n1 elements to form max of k elements # if simply k is 2nd element,and n2 is 4, we don't want to go till 4, we only need 2 elements max
         while low <=high:
             mid1 = (low+high)//2
             mid2 = k-mid1 #this gives other array mid2 or how many elements we need to consider in arr2
