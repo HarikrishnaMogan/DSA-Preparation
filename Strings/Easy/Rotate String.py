@@ -12,3 +12,17 @@ class Solution:
             if s==goal:
                 return True
         return False
+
+................................................
+
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+        if len(s) != len(goal):
+            return False
+        elif s==goal:
+            return True
+        temp = s+s
+        if goal in temp:
+            return True
+        else:
+            return False
