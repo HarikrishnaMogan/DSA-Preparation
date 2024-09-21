@@ -22,3 +22,48 @@ https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-l
             return newNode
         else:
             return head
+#............................................................................
+
+# without recusrssion
+
+'''
+
+class Node:
+    def __init__(self, data):   # data -> value stored in node
+        self.data = data
+        self.next = None
+'''
+
+class Solution:
+    def addOne(self,head):
+        #Returns new head of linked List.
+        
+        def reverse(node):
+            temp = node
+            prev = None
+            while temp:
+                next = temp.next
+                temp.next = prev
+                prev = temp
+                temp = next
+            return prev
+        
+        tempHead = reverse(head)
+        carry = 1
+        temp = tempHead
+        while temp:
+            temp.data = temp.data+carry
+            if temp.data < 10:
+                carry =0
+                break
+            else:
+                temp.data = 0
+                carry =1
+            temp=temp.next
+        head = reverse(tempHead)
+        if carry == 1:
+            newNode = Node(1)
+            newNode.next = head
+            return newNode
+        
+        return head
