@@ -52,3 +52,27 @@ class Solution:
             temp.prev=None
             
         return head
+#............................................................................
+class Solution:
+    #Function to delete all the occurances of a key from the linked list.
+    def deleteAllOccurOfX(self, head, x):
+        # code here
+        # edit the linked list
+        temp = head
+        while temp:
+            if temp.data == x:
+                if temp == head:
+                    head = head.next
+                
+                prev = temp.prev
+                next = temp.next
+                temp.next = None
+                temp.prev  = None
+                if prev:
+                    prev.next = next
+                if next:
+                    next.prev = prev
+                temp = next
+            else:
+                temp=temp.next
+        return head
