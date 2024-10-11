@@ -19,3 +19,25 @@ class Solution:
         if n<0:
             ans = 1/ans
         return ans
+................................................................
+
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        def pw(x,n):
+            if n <= 0:
+                return 1
+            if n==1:
+                return x
+            
+            if n%2==0:
+                return pw(x*x,n//2)
+            
+            return x*pw(x,n-1)
+        nn = n
+        if nn<0:
+            nn=-1*n
+        ans = pw(x,nn)
+        if n<0:
+            ans=1/ans
+        return ans
+
