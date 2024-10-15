@@ -6,16 +6,16 @@ class Solution:
     def countGoodNumbers(self, n: int) -> int:
         mod = int(10**9+7)
         def power(x,n,mod):
-            
-            if n == 0:
+            if n==0:
                 return 1
             if n==1:
-                return x%mod
+                return x
             
-            if n%2==0:
-                return power(x*x,n//2,mod)%mod
+            if n%2 == 0:
+                return power((x*x)%mod,n//2,mod)%mod
             
             return (x*power(x,n-1,mod))%mod
+                
 
         even = n//2+n%2
         odd = n//2
