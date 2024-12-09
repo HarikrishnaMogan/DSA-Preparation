@@ -15,3 +15,15 @@ https://www.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not-1587
         if bits[k] == "1":
             return True
         return False
+
+........................................
+ def checkKthBit(self, n,k):
+        if n >> k & 1:
+            return True
+        return False
+.....................................
+def checkKthBit(self, n,k):
+        if n & 1<<k:
+            return True
+        return False
+
